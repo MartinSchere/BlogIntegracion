@@ -12,6 +12,17 @@ Un blog de integración de repaso de CodingDojo!
 6. Migrar base de datos: `python manage.py migrate`
 7. ¡Correr servidor! `python manage.py runserver`
 
+## Branches y commits
+
+Crearemos una branch por cada nueva funcionalidad que agreguemos:
+
+`git checkout -b branchName` -> Crea una branch y cambia a la misma
+
+Después la empujaremos a Github:
+
+`git add .` (o lo que sea)
+`git commit -m  "mensaje"` 
+`git push origin <nombre-de-la-branch>`
 
 #### Hecho con ❤ por ⛩
 

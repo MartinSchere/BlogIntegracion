@@ -15,7 +15,13 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    voting_users = models.ManyToManyField(User, through="Vote", related_name="voted_comments")
 
 class Clap(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="claps")
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="claps")
+
+class Vote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="votes")
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE, related_name="votes")
+    value = models.IntegerField()

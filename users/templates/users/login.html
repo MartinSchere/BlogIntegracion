@@ -1,0 +1,20 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Iniciar sesión</title>
+{% endblock %}
+
+{% block contents %}
+<main class="container d-flex justify-content-center align-items-center mh-100" style="min-height: 100vh;">
+
+    <div class="shadow bg-white p-5" style="max-width: 500px; margin-bottom: 3em">
+        <h4>Iniciar sesión</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <input class="btn btn-success mt-2" type="submit" value="Iniciar sesión">
+        </form>
+    </div>
+</main>
+{% endblock contents %}

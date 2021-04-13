@@ -1,0 +1,21 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Regístrate</title>
+{% endblock %}
+
+{% block contents %}
+<main class="container d-flex justify-content-center align-items-center mh-100" style="min-height: 100vh;">
+
+    <div class="shadow bg-white p-5" style="max-width: 500px; margin-bottom: 3em">
+        <h4>Regístrate</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <input class="btn btn-success mt-2" type="submit" value="Enviar">
+            <span class="d-block mt-2">¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></span>
+        </form>
+    </div>
+</main>
+{% endblock contents %}

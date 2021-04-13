@@ -1,0 +1,12 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+<title>Gracias</title>
+{% endblock %}
+
+{% block contents %}
+<main class="container">
+    <h2>Vuelve pronto...</h2>
+    <p><a href="{% url 'login' %}">Iniciar sesión otra vez</a></p>
+</main>
+{% endblock contents %}

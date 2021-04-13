@@ -14,7 +14,7 @@ class UserRegistrationView(CreateView):
 
 class UserLoginView(LoginView):
     template_name = "users/login.html"
-    success_url = ""
+    success_url = "/"
 
 class UserLogoutView(LogoutView):
     template_name = "users/logout.html"

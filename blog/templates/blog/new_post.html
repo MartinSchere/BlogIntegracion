@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Crear un post</title>
+{% endblock title %}
+
+{% block description %}
+<meta name="description" content="Creación de un nuevo post para nuestro Dojo Blog.">
+{% endblock description %}
+
+{% block contents %}
+<form method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input class="btn btn-primary" type="submit" value="Enviar">
+</form>
+
+{% endblock contents %}
